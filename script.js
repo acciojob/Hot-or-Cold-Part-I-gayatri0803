@@ -4,20 +4,31 @@ var btn=document.getElementById("btn");
 var numPtag=document.getElementById("num");
 var res=document.getElementById("respond");
 var inputvalue=document.getElementById("guess").value;
-var diff=Number(inputvalue)-Number(numPtag);
 
-if(Math.abs(diff)>=5)
-{
-	res.textContent="Hot";
-}
-else
-{
-	res.textContent="Cold";
-}
 function generateRandomNumber() {
-	var no=Math.floor(Math.random()*40)-20;
-	numPtag.textContent=no;
+	randomNum=Math.floor(Math.random()*40)-20;
+	document.getElementById("num").innerText=randomNum;
+	guessNum();
+	checkGame();
 	
 }
 
-btn.addEventListener("click",generateRandomNumber)
+function guessNum() {
+	input=Number(document.getElementById("guess").value);	
+}
+
+
+function checkGame() {
+
+if(Math.abs(randomNum-input)<=5)
+{
+	documet.getElementById("respond").innerText="Hot";
+}
+else
+{
+	documet.getElementById("respond").innerText="Cold";
+}
+	
+}
+
+btn.addEventListener("click",generateRandomNumber);
