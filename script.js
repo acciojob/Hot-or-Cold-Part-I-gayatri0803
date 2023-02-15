@@ -5,8 +5,8 @@ var numPtag=document.getElementById("num");
 var res=document.getElementById("respond");
 var inputvalue=document.getElementById("guess").value;
 
-function generateRandomNumber() {
-	randomNum=Math.floor(Math.random()*40)-20;
+function randomNumGenerator() {
+    randomNum=Math.floor(Math.random()*41)-20;
 	document.getElementById("num").innerText=randomNum;
 	guessNum();
 	checkGame();
@@ -20,7 +20,7 @@ function guessNum() {
 
 function checkGame() {
 
-if(Math.abs(randomNum-input)<=5)
+if(Math.abs(randomNum- input)<=5)
 {
 	documet.getElementById("respond").innerText="Hot";
 }
@@ -31,4 +31,4 @@ else
 	
 }
 
-btn.addEventListener("click",generateRandomNumber);
+btn.addEventListener("click",randomNumGenerator);
